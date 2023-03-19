@@ -39,7 +39,6 @@ script = ExtResource( 5 )
 [node name="DetectionZone" type="Area2D" parent="AI"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI/DetectionZone"]
-visible = false
 shape = SubResource( 2 )
 
 [node name="PatrolTimer" type="Timer" parent="AI"]
@@ -47,7 +46,7 @@ wait_time = 0.161
 one_shot = true
 
 [node name="Team" parent="." instance=ExtResource( 6 )]
-team = 1
+team = 2
 
 [connection signal="body_entered" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_entered"]
 [connection signal="body_exited" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_exited"]

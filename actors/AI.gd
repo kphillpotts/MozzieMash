@@ -77,10 +77,25 @@ func handle_reload():
 
 
 func _on_PatrolTimer_timeout() -> void:
+	
+	var viewportInfo = get_viewport().get_visible_rect()
+	var myposition = origin
+	var minx = myposition.x - viewportInfo.position.x
+	var maxx = viewportInfo.end.x - myposition.x
+	var miny = myposition.y - viewportInfo.position.y
+	var maxy = viewportInfo.end.y - myposition.y
+	var random_x = rand_range(viewportInfo.position.x + 50, viewportInfo.end.x - 50)
+	var random_y = rand_range(viewportInfo.position.y + 50, viewportInfo.end.y - 50)
+	
+	patrol_location = Vector2(random_x, random_y)
+	#var random_y = rand_range(miny, maxy)
+	print ("patrol location set ", random_x)
+	print ("patrol y ", random_y)
 	var partrol_range = 100
-	var random_x = rand_range(-partrol_range, partrol_range)
-	var random_y = rand_range(-partrol_range, partrol_range)
-	patrol_location = Vector2(random_x, random_y) + origin
+#	var random_x = rand_range(-partrol_range, partrol_range)
+#	var random_y = rand_range(-partrol_range, partrol_range)
+	#patrol_location = Vector2(random_x, random_y) + origin
+	
 	patrol_location_reached = false
 	actor_velocity = actor.velocity_toward(patrol_location)
 

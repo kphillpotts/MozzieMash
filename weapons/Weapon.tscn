@@ -115,7 +115,7 @@ position = Vector2( 15, 0 )
 position = Vector2( 25, 0 )
 
 [node name="AttackCooldown" type="Timer" parent="."]
-wait_time = 0.493
+wait_time = 0.2
 one_shot = true
 
 [node name="MuzzleFlash" type="Sprite" parent="."]
@@ -131,6 +131,7 @@ anims/MuzzleFlash = SubResource( 2 )
 anims/reload = SubResource( 3 )
 
 [node name="MuzzleLight" type="Light2D" parent="."]
+visible = false
 position = Vector2( 21, 0 )
 scale = Vector2( 0.728938, 0.636363 )
 texture = ExtResource( 5 )

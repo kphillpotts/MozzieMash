@@ -6,7 +6,7 @@ signal weapon_out_of_ammo
 export (PackedScene) var Bullet
 
 var team : Team = null
-var max_ammo: int = 10
+var max_ammo: int = 6
 var current_ammo: int = max_ammo
 
 onready var end_of_gun = $EndOfGun
