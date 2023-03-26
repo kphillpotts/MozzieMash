@@ -6,6 +6,6 @@ enum TeamName {
 	NEUTRAL,
 	PLAYER,
 	ENEMY
-}
+}	
 
 export (TeamName) var team = TeamName.NEUTRAL
